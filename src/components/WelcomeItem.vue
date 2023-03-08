@@ -7,7 +7,6 @@
       <h3>
         <slot name="heading"></slot>
       </h3>
-      <slot></slot>
     </div>
   </div>
 </template>
@@ -16,11 +15,14 @@
 .item {
   margin-top: 2rem;
   display: flex;
+  height: 7.7em;
+  margin-left: 26em;
 }
 
 .details {
   flex: 1;
-  margin-left: 1rem;
+  margin-left: -1em;
+  margin-top: 2.3em;
 }
 
 i {

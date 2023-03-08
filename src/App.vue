@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+
+const signedIn = ref(true)
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/Rocket Shop-logo.png" width="200" height="200" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Welcome to Rocket Shop!" />
 
-      <nav>
+      <nav v-if="!signedIn">
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/signup">Sign up</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
       </nav>
     </div>
   </header>
@@ -24,6 +28,7 @@ import HelloWorld from './components/HelloWorld.vue'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  width: 130%;
 }
 
 .logo {
@@ -33,13 +38,13 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 32px;
   text-align: center;
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+nav a {
+  font-size: 26px;
 }
 
 nav a.router-link-exact-active:hover {
