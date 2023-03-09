@@ -85,20 +85,22 @@ const count = ref(0)
   <WelcomeItem>
     <template #icon>
       <Transition>
-        <img
-          v-if="!grad"
-          @mouseover="grad = !grad"
-          src="@/assets/videogames.png"
-          width="35"
-          height="35"
-        />
-        <img
-          v-else
-          @mouseover="grad = !grad"
-          src="@/assets/videogames-grad.png"
-          width="35"
-          height="35"
-        />
+        <RouterLink to="/vgames" v-bind:class="[grad ? 'grad' : 'head']">
+          <img
+            v-if="!grad"
+            @mouseover="grad = true"
+            src="@/assets/videogames.png"
+            width="35"
+            height="35"
+          />
+          <img
+            v-else
+            @mouseover="grad = false"
+            src="@/assets/videogames-grad.png"
+            width="35"
+            height="35"
+          />
+        </RouterLink>
       </Transition>
     </template>
     <template #heading
@@ -138,4 +140,5 @@ const count = ref(0)
 .head:hover {
   background-color: transparent;
 }
+
 </style>

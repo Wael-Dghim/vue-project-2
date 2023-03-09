@@ -1,12 +1,8 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 a {
   text-decoration: none;
@@ -23,7 +19,7 @@ a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 72px;
-  animation: move-bg 3s linear infinite;
+  animation: move-bg 2s linear infinite;
 }
 
 h2 {
@@ -37,7 +33,7 @@ h2 {
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: move-bg 3s linear infinite alternate-reverse;
+  animation: move-bg 4s linear infinite alternate-reverse;
 }
 
 @keyframes move-bg {
@@ -54,8 +50,13 @@ h2 {
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    margin: 2%;
+    margin-left: 0;
+    background: url('../assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px);
+    height: 9vh;
   }
 
   #app {

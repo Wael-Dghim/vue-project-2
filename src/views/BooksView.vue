@@ -1,7 +1,15 @@
 <template>
-  <div></div>
+  <div>
+    <TheWelcome />
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import TheWelcome from '../components/TheWelcome.vue'
+</script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+#header {
+  display: none;
+}
+</style>
