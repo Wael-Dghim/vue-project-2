@@ -14,27 +14,48 @@ const count = ref(0)
         <img
           v-if="!grad"
           @mouseover="grad = !grad"
-          src="@/assets/book.png"
+          src="@/assets/bookshelf.png"
           width="35"
           height="35"
         />
-        <img v-else @mouseover="grad = !grad" src="@/assets/book-grad.png" width="35" height="35" />
+        <img
+          v-else
+          @mouseover="grad = !grad"
+          src="@/assets/bookshelf-grad.png"
+          width="35"
+          height="35"
+        />
       </Transition>
     </template>
     <template #heading>
       <Transition>
-        <RouterLink to="/" v-bind:class="[grad ? 'grad' : 'head']"> Books </RouterLink>
+        <RouterLink to="/books" v-bind:class="[grad ? 'grad' : 'head']"> Books </RouterLink>
       </Transition>
     </template>
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
-      <img src="@/assets/clothing.png" width="35" height="35" />
+      <Transition>
+        <img
+          v-if="!grad"
+          @mouseover="grad = !grad"
+          src="@/assets/clothing.png"
+          width="35"
+          height="35"
+        />
+        <img
+          v-else
+          @mouseover="grad = !grad"
+          src="@/assets/clothing-grad.png"
+          width="35"
+          height="35"
+        />
+      </Transition>
     </template>
     <template #heading
       ><Transition>
-        <RouterLink to="/" v-bind:class="[grad ? 'grad' : 'head']"> Clothing </RouterLink>
+        <RouterLink to="/clothing" v-bind:class="[grad ? 'grad' : 'head']"> Clothing </RouterLink>
       </Transition></template
     >
   </WelcomeItem>
@@ -45,7 +66,7 @@ const count = ref(0)
     </template>
     <template #heading
       ><Transition>
-        <RouterLink to="/" v-bind:class="[grad ? 'grad' : 'head']"> Jewelry </RouterLink>
+        <RouterLink to="/jewelry" v-bind:class="[grad ? 'grad' : 'head']"> Jewelry </RouterLink>
       </Transition></template
     >
   </WelcomeItem>
@@ -56,7 +77,7 @@ const count = ref(0)
     </template>
     <template #heading
       ><Transition>
-        <RouterLink to="/" v-bind:class="[grad ? 'grad' : 'head']"> Sports Wear </RouterLink>
+        <RouterLink to="/sports" v-bind:class="[grad ? 'grad' : 'head']"> Sports Wear </RouterLink>
       </Transition></template
     >
   </WelcomeItem>
@@ -82,7 +103,7 @@ const count = ref(0)
     </template>
     <template #heading
       ><Transition>
-        <RouterLink to="/" v-bind:class="[grad ? 'grad' : 'head']"> Video Games </RouterLink>
+        <RouterLink to="/vgames" v-bind:class="[grad ? 'grad' : 'head']"> Video Games </RouterLink>
       </Transition></template
     >
   </WelcomeItem>
@@ -104,7 +125,7 @@ const count = ref(0)
 .grad {
   text-decoration: none;
   font-weight: bold;
-  background: linear-gradient(90deg, hsl(324, 86%, 47%), hsl(27, 99%, 55%), hsl(313, 67%, 36%));
+  background: linear-gradient(90deg, hsl(27, 99%, 55%), hsl(324, 86%, 47%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -114,7 +135,7 @@ const count = ref(0)
   opacity: 0;
 }
 
-a.router-link-exact-active:hover {
+.head:hover {
   background-color: transparent;
 }
 </style>
