@@ -14,7 +14,6 @@
         ><span>Username</span> <br /><input
           v-model="username"
           @focus="userFocused = true"
-          @blur="valid"
           :class="{ focus: userFocused, 'has-val': username }"
           type="text" /></label
       ><br />
@@ -22,13 +21,12 @@
         ><span>Password</span> <br /><input
           v-model="password"
           @focus="passFocused = true"
-          @blur="valid"
           class
           :class="{ focus: passFocused, 'has-val': password }"
           type="password"
       /></label>
     </form>
-    <button type="submit">Submit</button>
+    <!-- <button type="submit">Submit</button> -->
   </div>
 </template>
 
@@ -47,6 +45,13 @@ const password = ref('')
   50% {
     opacity: 0.5;
   }
+}
+
+
+
+.focus {
+  outline: none !important;
+  color: black;
 }
 .animate-pulse {
   animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;

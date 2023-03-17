@@ -74,13 +74,13 @@
   left: 0;
   width: 102%;
   height: 80%;
-  transform: rotate(-45deg);
+  /* transform: rotate(-45deg); */
   overflow: hidden;
 }
 
 .star {
   $star-count: 50;
-  --star-color: hsl(27, 99%, 55%);
+  --star-color: hsl(120, 100%, 20%);
   --star-tail-length: 6em;
   --star-tail-height: 2px;
   --star-width: calc(var(--star-tail-length) / 6);
@@ -95,7 +95,7 @@
   color: var(--star-color);
   background: linear-gradient(45deg, var(--star-color), transparent);
   border-radius: 50%;
-  filter: drop-shadow(0 0 6px hsl(27, 99%, 55%));
+  filter: drop-shadow(0 0 6px hsl(120, 100%, 20%));
   transform: translate3d(104em, 0, 0);
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
     tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;

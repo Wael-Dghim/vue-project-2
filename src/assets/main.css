@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#app {
+  display: flex;
+}
+
 a {
   text-decoration: none;
 }
@@ -14,12 +18,11 @@ a:hover {
 
 .text-gradient {
   text-decoration: none;
-  background: linear-gradient(90deg, hsl(324, 86%, 47%), hsl(27, 99%, 55%), hsl(313, 67%, 36%));
+  background: linear-gradient(90deg, hsl(90, 100%, 44%), hsl(101, 100%, 35%), hsl(120, 100%, 22%));
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 72px;
-  animation: move-bg 2s linear infinite;
 }
 
 h2 {
@@ -29,10 +32,13 @@ h2 {
 .text-gradient-reverse {
   margin-top: 15px;
   text-decoration: none;
-  background: linear-gradient(90deg, hsl(324, 86%, 47%), hsl(27, 99%, 55%), hsl(313, 67%, 36%));
+  background: linear-gradient(90deg, hsl(148, 100%, 15%), hsl(120, 100%, 22%), hsl(75, 100%, 60%));
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-reverse:hover {
   animation: move-bg 4s linear infinite alternate-reverse;
 }
 
@@ -50,18 +56,17 @@ h2 {
 
 @media (min-width: 1024px) {
   body {
-    margin: 2%;
-    margin-left: 0;
-    background: url('../assets/bg.jpg');
-    background-size: cover;
+    margin: 0;
+    background: url('../assets/CircuitPrimary.svg');
+    background-color: #2f2f2f;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     backdrop-filter: blur(3px);
-    height: 9vh;
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     padding: 0 2rem;
   }
 }
